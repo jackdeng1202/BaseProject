@@ -11,6 +11,7 @@ import android.widget.Toast;
 import com.lgm.baseframe.common.http.HttpCallbackListener;
 import com.lgm.baseframe.common.http.HttpUtil;
 import com.lgm.baseframe.common.http.RequestUtil;
+import com.lgm.baseframe.ui.IBaseView;
 
 import java.util.Map;
 
@@ -20,11 +21,10 @@ import butterknife.ButterKnife;
 /**
  * Created by Administrator on 2015/12/28.
  */
-public abstract class BaseFragment extends Fragment implements View.OnClickListener {
+public abstract class BaseFragment extends Fragment implements View.OnClickListener,IBaseView {
 
 	private View rootView;
 
-	private RequestUtil requestUtil;
 
 
 	public View getRootView() {
@@ -33,7 +33,6 @@ public abstract class BaseFragment extends Fragment implements View.OnClickListe
 
 
 	public void doOnActivityCreated() {
-
 
 	}
 
@@ -81,13 +80,6 @@ public abstract class BaseFragment extends Fragment implements View.OnClickListe
 	}
 
 
-	private void initRequestUtil() {
-		if (requestUtil == null) {
-			requestUtil = RequestUtil.getInstance();
-		}
-	}
-
-
 
 	public String getPageName() {
 		return getClass().getName();
@@ -126,6 +118,21 @@ public abstract class BaseFragment extends Fragment implements View.OnClickListe
 	public void onDestroyView() {
 		super.onDestroyView();
 		ButterKnife.unbind(this);
+	}
+
+	@Override
+	public void showLoading() {
+
+	}
+
+	@Override
+	public void hideLoading() {
+
+	}
+
+	@Override
+	public void onError(int errorCode, String errorMsg) {
+
 	}
 
 }

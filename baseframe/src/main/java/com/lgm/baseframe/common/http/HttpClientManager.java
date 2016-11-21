@@ -16,7 +16,7 @@ import okhttp3.OkHttpClient;
 public class HttpClientManager {
 
 	private static HttpClientManager httpClientManager;
-
+	private  String  userAgent = "android";
 
 	private HttpClientManager() {
 	}
@@ -41,6 +41,8 @@ public class HttpClientManager {
 	}
 
 	private boolean hasCookie = false;
+
+
 
 	public OkHttpClient getOkHttpClient() {
 		if(!hasCookie){
@@ -74,4 +76,15 @@ public class HttpClientManager {
 		return okHttpClient;
 	}
 
+	public String getUserAgent() {
+		if(userAgent==null||userAgent.isEmpty()){
+			userAgent="android";
+		}
+		return userAgent;
+	}
+
+	public void setUserAgent(String userAgent) {
+
+		this.userAgent = userAgent;
+	}
 }

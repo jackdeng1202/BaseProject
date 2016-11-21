@@ -150,12 +150,12 @@ public class RequestCreator {
         }
 
         @Override
-        public void onConnectionFailed() {
+        public void onConnectionFailed(Exception ex) {
             if (view != null) {
                 view.hideLoading();
             }
             if (httpCallbackListener != null) {
-                httpCallbackListener.onConnectionFailed();
+                httpCallbackListener.onConnectionFailed(ex);
             }
         }
 

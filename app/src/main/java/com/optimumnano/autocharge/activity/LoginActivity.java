@@ -21,7 +21,6 @@ public class LoginActivity extends BaseActivity implements ILoginView {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setTitle("登录");
-        HttpClientManager.getInstance().initOkHttpClient(this);
         loginPresenter = new LoginPresenter(this);
         setRightCustomBtn("请求", new View.OnClickListener() {
             @Override

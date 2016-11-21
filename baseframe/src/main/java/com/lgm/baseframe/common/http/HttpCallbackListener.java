@@ -24,7 +24,7 @@ public abstract class HttpCallbackListener implements HttpUtil.HTTPLiStener {
 	/**
 	 * 连接服务器失败，包括网络超时等
 	 */
-	public void onConnectionFailed() {
+	public void onConnectionFailed(Exception ex) {
 	}
 
 	/**

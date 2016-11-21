@@ -18,8 +18,6 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.lgm.baseframe.R;
-import com.lgm.baseframe.common.Constant;
-import com.lgm.baseframe.common.http.RequestUtil;
 import com.lgm.baseframe.ui.IBaseView;
 
 import java.util.List;
@@ -76,7 +74,6 @@ public class BaseActivity extends AppCompatActivity implements OnClickListener,I
 
 		super.onCreate(savedInstanceState);
 		mContext = this;
-		Constant.initUrls(this);
 		super.setContentView(R.layout.activity_base);
 		container = (ViewGroup) findViewById(R.id.container);
 		headView = (RelativeLayout) findViewById(R.id.title_layout);

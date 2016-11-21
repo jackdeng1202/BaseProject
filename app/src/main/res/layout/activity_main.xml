@@ -1,35 +1,31 @@
-<?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/activity_main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.optimumnano.autocharge.MainActivity"
-    tools:ignore="GradleDependency">
+    android:orientation="vertical">
 
-    <TextView
-        android:layout_width="wrap_content"
+    <Button
+        android:id="@+id/wgsNaviBtn"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Hello World!"
-        android:id="@+id/textView"
-        android:layout_marginStart="168dp"
-        app:layout_constraintLeft_toLeftOf="parent"
-        android:layout_marginLeft="168dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.45" />
+        android:text="国际经纬度坐标" />
 
-    <ProgressBar
-        android:id="@+id/progressBar"
-        style="?android:attr/progressBarStyleLarge"
-        android:layout_width="wrap_content"
+    <Button
+        android:id="@+id/gcjNaviBtn"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        tools:ignore="MissingConstraints"
-        app:layout_constraintBottom_toTopOf="@+id/textView"
-        android:layout_marginBottom="72dp"
-        app:layout_constraintRight_toLeftOf="@+id/textView"
-        android:layout_marginEnd="8dp"
-        android:layout_marginRight="8dp"/>
+        android:text="国测局坐标" />
 
-</android.support.constraint.ConstraintLayout>
+    <Button
+        android:id="@+id/bdmcNaviBtn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="百度墨卡托坐标" />
+
+    <Button
+        android:id="@+id/mDb06llNaviBtn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="百度经纬度坐标" />
+
+</LinearLayout>
