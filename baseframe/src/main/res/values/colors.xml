@@ -1,6 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <color name="main_style_color">#2b405a</color>
+
+    <color name="bg_color"> #303F9F</color>
+    <color name="bg_color1"> #0DA944</color>
     <color name="main_bg_color">#f2f5f8</color>
     <array name="dot_colors">
         <item>#45aaf2</item>

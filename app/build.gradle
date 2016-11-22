@@ -15,6 +15,12 @@ android {
             storePassword 'optimum'
         }
     }
+    sourceSets{
+        main{
+            jniLibs.srcDirs 'libs'
+        }
+    }
+
     compileSdkVersion 24
     buildToolsVersion "25.0.0"
     defaultConfig {
@@ -24,6 +30,15 @@ android {
         versionCode 1
         versionName "1.0"
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+        ndk {
+            abiFilters "armeabi"
+        }
+        manifestPlaceholders = [
+                GETUI_APP_ID : "bYu8DvNoPQ7pVzr2dR1Rh4",
+                GETUI_APP_KEY : "VNgQF3VZRC962beuxetobA",
+                GETUI_APP_SECRET : "LSV2mBYBNN6soqQKYdxYE6",
+                PACKAGE_NAME : applicationId
+        ]
     }
     buildTypes {
         release {
@@ -35,31 +50,30 @@ android {
             minifyEnabled false
             signingConfig signingConfigs.debug
         }
-    }
-    sourceSets {
-        main {
-            jniLibs.srcDirs = ['libs']
+        sourceSets {
+            main {
+                jniLibs.srcDirs = ['libs']
+            }
         }
-
-
+    }
+}
+repositories {
+    flatDir {
+        dirs 'libs'   // aar目录
     }
 }
 
 dependencies {
     compile fileTree(include: ['*.jar'], dir: 'libs')
+    compile(name: 'HMS-SDK-2.4.0.300', ext: 'aar')
     androidTestCompile('com.android.support.test.espresso:espresso-core:2.2.2', {
         exclude group: 'com.android.support', module: 'support-annotations'
     })
+    compile 'com.android.support:appcompat-v7:24.1.1'
     compile 'com.android.support.constraint:constraint-layout:1.0.0-beta3'
     compile project(':baseframe')
+    compile 'com.android.support:recyclerview-v7:24.1.1'
     testCompile 'junit:junit:4.12'
-    compile files('libs/BaiduNaviSDK_3.2.0.jar')
-    compile files('libs/httpmime-4.1.2.jar')
-    compile files('libs/locSDK_6.13.jar')
-    compile files('libs/baidumapapi_base_v4_1_1.jar')
-    compile files('libs/baidumapapi_search_v4_1_1.jar')
-    compile files('libs/baidumapapi_util_v4_1_1.jar')
-    compile files('libs/baidumapapi_radar_v4_1_1.jar')
-    compile files('libs/baidumapapi_cloud_v4_1_1.jar')
-    compile files('libs/baidumapapi_map_v4_1_1.jar')
+    compile 'com.getui:sdk:+'
+    compile 'com.android.support:design:24.1.1'
 }

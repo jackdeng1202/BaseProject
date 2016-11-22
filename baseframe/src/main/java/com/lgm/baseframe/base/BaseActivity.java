@@ -84,7 +84,9 @@ public class BaseActivity extends AppCompatActivity implements OnClickListener,I
 		progressDialog = new ProgressDialog(mContext);
 	}
 
-
+	public void setProgressDialogTitle(String title) {
+		progressDialog.setTitle(title);
+	}
 
 	public void setTitle(CharSequence str) {
 		titleView.setText(str);

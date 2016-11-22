@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">AutoCharge</string>
+    <string name="hwpush_ability_value" translatable="false">successRateAnalytics</string>
 </resources>

@@ -19,6 +19,7 @@ import com.baidu.navisdk.adapter.BaiduNaviCommonModule;
 import com.baidu.navisdk.adapter.NaviModuleFactory;
 import com.baidu.navisdk.adapter.NaviModuleImpl;
 import com.optimumnano.autocharge.R;
+import com.optimumnano.autocharge.common.BaiduNavigation;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -26,7 +27,7 @@ import java.util.List;
 /**
  * 诱导界面
  *
- * @author sunhao04
+ * @author jack
  *
  */
 public class BNDemoGuideActivity extends Activity {
@@ -46,7 +47,7 @@ public class BNDemoGuideActivity extends Activity {
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 
-		BNDemoMainActivity.activityList.add(this);
+		BaiduNavigation.activityList.add(this);
 		createHandler();
 		if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.HONEYCOMB) {
 		}
@@ -75,7 +76,7 @@ public class BNDemoGuideActivity extends Activity {
 		if (intent != null) {
 			Bundle bundle = intent.getExtras();
 			if (bundle != null) {
-				mBNRoutePlanNode = (BNRoutePlanNode) bundle.getSerializable(BNDemoMainActivity.ROUTE_PLAN_NODE);
+				mBNRoutePlanNode = (BNRoutePlanNode) bundle.getSerializable(BaiduNavigation.ROUTE_PLAN_NODE);
 			}
 		}
 		//显示自定义图标
@@ -122,7 +123,7 @@ public class BNDemoGuideActivity extends Activity {
 			BNRouteGuideManager.getInstance().onDestroy();
 		}
 		hd=null;
-		BNDemoMainActivity.activityList.remove(this);
+		BaiduNavigation.activityList.remove(this);
 
 	}
 

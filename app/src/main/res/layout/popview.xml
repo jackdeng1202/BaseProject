@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="#fff"
+                android:padding="15dp"
+    >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        >
+
+        <TextView
+            android:gravity="center"
+            android:text="条目一"
+            android:layout_marginBottom="5dp"
+            android:background="#55ff0000"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"/>
+
+        <TextView
+            android:gravity="center"
+            android:text="条目二"
+            android:layout_marginBottom="5dp"
+            android:background="#55ff0000"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"/>
+
+        <TextView
+            android:gravity="center"
+            android:text="条目三"
+            android:layout_marginBottom="5dp"
+            android:background="#55ff0000"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"/>
+        <TextView
+            android:gravity="center"
+            android:text="该功能开发中,请手动输入全部车牌号"
+            android:layout_marginBottom="20dp"
+            android:background="#55ff0000"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"/>
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/popview_cancel"
+        android:text="取消"
+        android:layout_alignParentBottom="true"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+
+</RelativeLayout>

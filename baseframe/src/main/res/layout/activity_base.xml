@@ -5,7 +5,7 @@
               android:fitsSystemWindows="true"
               android:clipToPadding="true"
               android:clipChildren="false"
-              android:background="@color/main_bg_color"
+              android:background="@color/bg_color1"
               android:layout_height="match_parent">
 <include layout="@layout/layout_title" />
  <FrameLayout

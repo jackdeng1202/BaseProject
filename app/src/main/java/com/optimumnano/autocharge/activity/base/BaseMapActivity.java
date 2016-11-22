@@ -3,7 +3,6 @@ package com.optimumnano.autocharge.activity.base;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
-import android.widget.Toast;
 
 import com.baidu.location.BDLocation;
 import com.baidu.location.BDLocationListener;
@@ -54,8 +53,6 @@ public class BaseMapActivity extends AppCompatActivity implements View.OnClickLi
         mBaiduMap.setOnMapLongClickListener(new BaiduMap.OnMapLongClickListener() {
             @Override
             public void onMapLongClick(LatLng latLng) {
-                System.out.println("latitude=" + latLng.latitude + "longtitude=" + latLng.longitude);
-                Toast.makeText(BaseMapActivity.this, "latitude=" + latLng.latitude + "longtitude=" + latLng.longitude, Toast.LENGTH_SHORT).show();
                 BaiduNavigation baiduNavigation=new BaiduNavigation(BaseMapActivity.this);
                 baiduNavigation.start(new LatLng(mLatitude,mLongitude),latLng);
             }

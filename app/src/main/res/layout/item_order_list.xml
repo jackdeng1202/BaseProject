@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:id="@+id/plate_number_view"
+        android:text="TextView"
+        style="@style/order_list_text_style" />
+
+    <TextView
+        android:id="@+id/owner_name"
+        style="@style/order_list_text_style"
+        android:text="TextView" />
+
+    <TextView
+        android:id="@+id/owner_phone"
+        style="@style/order_list_text_style"
+        android:text="TextView" />
+
+    <TextView
+        android:id="@+id/address"
+        style="@style/order_list_text_style"
+        android:text="TextView" />
+
+    <TextView
+        android:id="@+id/cur_battery"
+        style="@style/order_list_text_style"
+        android:text="TextView" />
+
+    <Button
+        android:id="@+id/cancel"
+        style="@style/order_list_text_style"
+        android:text="Button" />
+
+    <Button
+        android:id="@+id/confirm"
+        style="@style/order_list_text_style"
+        android:text="Button" />
+
+    <Button
+        android:id="@+id/done"
+        style="@style/order_list_text_style"
+        android:text="Button" />
+
+</LinearLayout>

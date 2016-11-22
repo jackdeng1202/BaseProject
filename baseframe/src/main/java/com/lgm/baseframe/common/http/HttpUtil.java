@@ -181,7 +181,7 @@ public class HttpUtil implements Runnable {
                 Exception obj = (Exception) message.obj;
                 listener.onConnectionFailed(obj);
                 LogUtil.v("result", "code:" + message.arg2 + "; url:" + url + ";resultMsg:"
-                        + obj.getCause().toString());
+                        + obj.getMessage());
                 return;
             }
             String resultObj = (String) message.obj;
@@ -216,9 +216,7 @@ public class HttpUtil implements Runnable {
         try {
             sendRequest();
         } catch (IOException e) {
-            if (!"Canceled".equals(e.getMessage())) {
-                this.sendPostMessage(RESULT_FAIL, -3);
-            }
+                this.sendPostMessage(e, -3);
             e.printStackTrace();
         }
         ThreadPoolManager.getInstance().didComplete(this);
@@ -248,7 +246,7 @@ public class HttpUtil implements Runnable {
                     break;
             }
         } catch (Exception e) {
-            sendPostMessage("", -5);
+            sendPostMessage(e, -5);
             e.printStackTrace();
             return;
         }
@@ -321,7 +319,9 @@ public class HttpUtil implements Runnable {
                 }
             }
         } else {
-            requestBody = RequestBody.create(MediaType.parse("utf-8"), JSON.toJSONString(requestData));
+            String msg = JSON.toJSONString(requestData);
+            LogUtil.v("params", msg);
+            requestBody = RequestBody.create(MediaType.parse("application/json; charset=utf-8"), msg);
         }
         if (requestBody == null) {
             requestBody = new FormBody.Builder().build();
